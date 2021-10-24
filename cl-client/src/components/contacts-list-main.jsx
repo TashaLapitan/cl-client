@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {contactsService} from "../services/contacts-service";
 import {ContactInfo} from "./contact-info";
+import {ContactForm} from "./contact-form";
 
 export const ContactsListMain = () => {
 
@@ -16,7 +17,7 @@ export const ContactsListMain = () => {
     }, []);
 
     return <div>
-
+            <ContactForm setContacts={setContacts} contacts={contacts}/>
             {contacts.map(contact => <ContactInfo key={contact.id} contact={contact}/>)}
 
     </div>

@@ -11,5 +11,13 @@ export const contactsService = {
         } catch (err) {
             console.log(err)
         }
+    },
+    addNewContact: async (newContact) => {
+        try {
+            const response = await axios.post(`${contactsController}/new_contact`, newContact);
+            return response.data;
+        } catch(err) {
+            console.log(err)
+        }
     }
 }
