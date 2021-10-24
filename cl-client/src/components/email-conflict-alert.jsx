@@ -1,6 +1,7 @@
 import React from 'react';
 import {Alert, Button} from "react-bootstrap";
 import {contactsService} from "../services/contacts-service";
+import {ConflictBtnWrapper} from "./styled-components";
 
 export const EmailConflictAlert = (props) => {
     const {reason, message, contact_id} = props.conflictError;
@@ -18,17 +19,17 @@ export const EmailConflictAlert = (props) => {
     };
 
     function renderButtons() {
-            return <div>
-                <Button onClick={()=> props.setHasConflict(false)}>Close</Button>
-                {reason === 'inactive' && <Button onClick={()=>restoreContact()}>Restore</Button>}
-                {reason === 'inactive' && <Button onClick={()=>props.overwriteContact(contact_id)}>Overwrite</Button>}
-            </div>
+        return <ConflictBtnWrapper>
+            <Button variant="outline-secondary" onClick={()=> props.setHasConflict(false)}>Close</Button>
+            {reason === 'inactive' && <Button variant="outline-success" onClick={()=>restoreContact()}>Restore</Button>}
+            {reason === 'inactive' && <Button variant="outline-danger" onClick={()=>props.overwriteContact(contact_id)}>Overwrite</Button>}
+        </ConflictBtnWrapper>
 
     };
 
-    return <Alert>
-                <Alert.Heading>Email conflict</Alert.Heading>
-                <p>{message}</p>
-                {renderButtons()}
-            </Alert>
+    return <Alert variant='warning'>
+        <Alert.Heading>Email conflict</Alert.Heading>
+        <p>{message}</p>
+        {renderButtons()}
+    </Alert>
 };

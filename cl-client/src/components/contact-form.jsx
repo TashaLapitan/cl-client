@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Form, Button, Alert} from 'react-bootstrap';
 import {contactsService} from "../services/contacts-service";
 import {EmailConflictAlert} from "./email-conflict-alert";
+import {ContactFormContainer, ContactFormStyled, FormBtnWrapper} from "./styled-components";
 
 export const ContactForm = (props) => {
 
@@ -27,10 +28,10 @@ export const ContactForm = (props) => {
     };
 
     function renderButtons() {
-        return <div>
-            <Button onClick={()=> handleSubmit()}>Save</Button>
-            <Button onClick={()=> clearForm()}>Cancel</Button>
-        </div>
+        return <FormBtnWrapper>
+            <Button variant="secondary" onClick={()=> handleSubmit()}>Save</Button>
+            <Button variant="outline-secondary" onClick={()=> clearForm()}>Cancel</Button>
+        </FormBtnWrapper>
     };
 
     async function handleSubmit() {
@@ -57,17 +58,21 @@ export const ContactForm = (props) => {
             setHasConflict(true);
             return
         };
+
         if (updatedContact.error) {
             props.setError(updatedContact.error);
             return
-        };
+        }
+
         if (!isEdit) {
             props.setContacts([...props.contacts, updatedContact])
-        } else {
+        }
+        else {
             props.setContacts(props.contacts.map(c => {
                 return c.id === updatedContact.id ? updatedContact : c
             }))
         }
+
         clearForm();
     };
 
@@ -119,9 +124,9 @@ export const ContactForm = (props) => {
         setIsEdit(props.contactToEdit ? true : false);
     }, [props.contactToEdit])
 
-    return <div>
+    return <ContactFormContainer>
         <h3>{isEdit ? "Edit contact" : "Add new contact"}</h3>
-        <div>
+        <ContactFormStyled>
             {hasConflict && <EmailConflictAlert conflictError={conflictError} setHasConflict={setHasConflict}
                                                 contacts={props.contacts} setContacts={props.setContacts}
                                                 clearForm={clearForm} overwriteContact={overwriteContact}
@@ -133,9 +138,9 @@ export const ContactForm = (props) => {
             {renderInput("Phone number", phoneNumber, setPhoneNumber, "eg.: 0049 444 888 7777")}
             {renderInput("Comment", comment, setComment, "eg.: Good boy", false)}
 
-            {validationError && <Alert>{validationError}</Alert>}
+            {validationError && <Alert variant="danger">{validationError}</Alert>}
 
             {renderButtons()}
-        </div>
-    </div>
+        </ContactFormStyled>
+    </ContactFormContainer>
 };

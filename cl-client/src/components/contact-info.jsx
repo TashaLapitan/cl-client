@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Card, Row, Col, Button} from 'react-bootstrap';
+import {ContactCard, ContactCardBtnWrapper, EditDeleteBtnWrapper, InfoRow} from "./styled-components";
 
 export const ContactInfo = (props) => {
 
@@ -16,26 +17,26 @@ export const ContactInfo = (props) => {
 
     function renderContactInfo() {
         return <Card.Body>
-                <Card.Title>{last_name}, {first_name}</Card.Title>
-                {comment && <p className="text-muted">{comment}</p>}
-                <Card.Text>
-                    <Row>
-                        <Col md={4}>Email:</Col>
-                        <Col md={8}>{email}</Col>
-                    </Row>
-                    <Row>
-                        <Col md={4}>Phone number:</Col>
-                        <Col md={8}>{phone_number}</Col>
-                    </Row>
-                </Card.Text>
-                <div>
-                    <div>
-                        <Button onClick={()=>prepareEdit()}>Edit</Button>
-                        <Button onClick={()=>prepareDelete()}>Delete</Button>
-                    </div>
-                    <Button onClick={()=>setShowInfo(false)}>History</Button>
-                </div>
-            </Card.Body>
+            <Card.Title>{last_name}, {first_name}</Card.Title>
+            {comment && <p className="text-muted">{comment}</p>}
+            <Card.Text>
+                <InfoRow>
+                    <Col md={4}>Email:</Col>
+                    <Col md={8}><strong>{email}</strong></Col>
+                </InfoRow>
+                <InfoRow>
+                    <Col md={4}>Phone:</Col>
+                    <Col md={8}><strong>{phone_number}</strong></Col>
+                </InfoRow>
+            </Card.Text>
+            <ContactCardBtnWrapper>
+                <EditDeleteBtnWrapper>
+                    <Button variant="outline-secondary" onClick={()=>prepareEdit()}>Edit</Button>
+                    <Button variant="outline-danger" onClick={()=>prepareDelete()}>Delete</Button>
+                </EditDeleteBtnWrapper>
+                <Button variant="outline-secondary" onClick={()=>setShowInfo(false)}>History</Button>
+            </ContactCardBtnWrapper>
+        </Card.Body>
     };
 
     function prettifyDate(dateStr) {
@@ -44,22 +45,22 @@ export const ContactInfo = (props) => {
 
     function renderContactHistory() {
         return <Card.Body>
-                <Card.Title>Contact history log</Card.Title>
-                <Card.Text>
-                    {change_log.map((r, i) => {
-                        return  <Row key={i}>
-                            <Col md={4}>{prettifyDate(r.created_at)}</Col>
-                            <Col md={8}>{r.details}</Col>
-                        </Row>
-                    })}
-                </Card.Text>
-                <div>
-                    <Button onClick={()=> setShowInfo(true)}>Close history</Button>
-                </div>
-            </Card.Body>
+            <Card.Title>Contact history log</Card.Title>
+            <Card.Text>
+                {change_log.map((r, i) => {
+                    return  <Row key={i}>
+                        <Col md={4}>{prettifyDate(r.created_at)}</Col>
+                        <Col md={8}>{r.details}</Col>
+                    </Row>
+                })}
+            </Card.Text>
+            <ContactCardBtnWrapper>
+                <Button variant="outline-secondary" onClick={()=> setShowInfo(true)}>Close history</Button>
+            </ContactCardBtnWrapper>
+        </Card.Body>
     };
 
-    return <Card>
-                {showInfo ? renderContactInfo() : renderContactHistory()}
-            </Card>
+    return <ContactCard>
+        {showInfo ? renderContactInfo() : renderContactHistory()}
+    </ContactCard>
 };
