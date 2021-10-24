@@ -5,6 +5,10 @@ export const ContactInfo = (props) => {
 
     const {first_name, last_name, email, phone_number, comment, change_log} = props.contact;
 
+    function prepareEdit() {
+        props.setContactToEdit(props.contact);
+    };
+
 
     return <Card.Body>
                 <Card.Title>{last_name}, {first_name}</Card.Title>
@@ -20,7 +24,7 @@ export const ContactInfo = (props) => {
                     </Row>
                 </Card.Text>
                 <div>
-                    <Button>Edit</Button>
+                    <Button onClick={()=>prepareEdit()}>Edit</Button>
                     <Button>Delete</Button>
                 </div>
             </Card.Body>

@@ -19,5 +19,13 @@ export const contactsService = {
         } catch(err) {
             console.log(err)
         }
+    },
+    editContact: async (newContact) => {
+        try {
+            const response = await axios.put(`${contactsController}/update_contact`, newContact);
+            return response.data;
+        } catch (err) {
+            console.log(err)
+        }
     }
 }

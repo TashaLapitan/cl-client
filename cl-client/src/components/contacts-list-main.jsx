@@ -6,6 +6,7 @@ import {ContactForm} from "./contact-form";
 export const ContactsListMain = () => {
 
     const [contacts, setContacts] = useState([]);
+    const [contactToEdit, setContactToEdit] = useState(null);
 
     async function getAllActiveContacts() {
         const allActiveContacts = await contactsService.getAllActiveContacts();
@@ -17,8 +18,13 @@ export const ContactsListMain = () => {
     }, []);
 
     return <div>
-            <ContactForm setContacts={setContacts} contacts={contacts}/>
-            {contacts.map(contact => <ContactInfo key={contact.id} contact={contact}/>)}
+            <ContactForm setContacts={setContacts}
+                         contacts={contacts}
+                         contactToEdit={contactToEdit}
+                         setContactToEdit={setContactToEdit}/>
+
+            {contacts.map(contact => <ContactInfo key={contact.id} contact={contact}
+                                                  setContactToEdit={setContactToEdit}/>)}
 
     </div>
 

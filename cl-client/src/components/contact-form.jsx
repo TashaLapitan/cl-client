@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Form, Button} from 'react-bootstrap';
 import {contactsService} from "../services/contacts-service";
 
@@ -9,15 +9,17 @@ export const ContactForm = (props) => {
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [comment, setComment] = useState("");
+    const [isEdit, setIsEdit] = useState(false);
 
     function renderInput(title, value, changeHandler, placeholder="", required= true) {
         return <Form.Group>
-            <Form.Label>{title}</Form.Label>
-            <Form.Control value={value}
-                          required={required}
-                          placeholder={placeholder}
-                          onChange={e => changeHandler(e.target.value)}/>
-        </Form.Group>
+                <Form.Label>{title}</Form.Label>
+                <Form.Control value={value}
+                              required={required}
+                              placeholder={placeholder}
+                              disabled={title==='Email' && isEdit}
+                              onChange={e => changeHandler(e.target.value)}/>
+                </Form.Group>
     };
 
     function renderButtons() {
@@ -30,7 +32,7 @@ export const ContactForm = (props) => {
     async function handleSubmit() {
         const validation = validateInputs();
         if (validation.error) {
-            alert(validation.error)
+            alert(validation.error);
             return;
         };
 
@@ -41,10 +43,20 @@ export const ContactForm = (props) => {
             phone_number: phoneNumber,
             comment
         };
+        if (props.contactToEdit) newContact.contact_id = props.contactToEdit.id;
 
-        const updatedContact = await contactsService.addNewContact(newContact);
+        const updatedContact = isEdit ? await contactsService.editContact(newContact) : await contactsService.addNewContact(newContact);
 
-        props.setContacts([...props.contacts, updatedContact])
+        let updatedContactsList = [];
+        if (!isEdit) {
+            updatedContactsList = [...props.contacts, updatedContact];
+        }
+        else {
+            updatedContactsList = props.contacts.map(c => {
+                return c.id === updatedContact.id ? updatedContact : c
+            })
+        }
+        props.setContacts(updatedContactsList)
         clearForm();
     };
 
@@ -64,10 +76,21 @@ export const ContactForm = (props) => {
         setEmail("");
         setPhoneNumber("");
         setComment("");
+        props.setContactToEdit(null);
+        setIsEdit(false);
     };
 
+    useEffect(() => {
+        setFirstName(props.contactToEdit ? props.contactToEdit.first_name : "");
+        setLastName(props.contactToEdit ? props.contactToEdit.last_name : "");
+        setEmail(props.contactToEdit ? props.contactToEdit.email : "");
+        setPhoneNumber(props.contactToEdit ? props.contactToEdit.phone_number : "");
+        setComment(props.contactToEdit ? props.contactToEdit.comment : "");
+        setIsEdit(props.contactToEdit ? true : false);
+    }, [props.contactToEdit])
+
     return <div>
-        <h3>Add new contact</h3>
+        <h3>{isEdit ? "Edit contact" : "Add new contact"}</h3>
         <Form>
 
             {renderInput("First name", firstName, setFirstName, "eg.: Jakob")}
