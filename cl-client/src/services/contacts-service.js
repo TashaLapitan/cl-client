@@ -35,5 +35,21 @@ export const contactsService = {
         } catch (err) {
             console.log(err)
         }
+    },
+    restoreContact: async (contactID) => {
+        try {
+            const response = await axios.put(`${contactsController}/restore`, {contact_id: contactID});
+            return response.data;
+        } catch (err) {
+            console.log(err)
+        }
+    },
+    overwriteContact: async (contactID, newContact) => {
+        try {
+            const response = await axios.put(`${contactsController}/overwrite`, {contact_id: contactID, ...newContact});
+            return response.data;
+        } catch (err) {
+            console.log(err)
+        }
     }
 }

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {Form, Button} from 'react-bootstrap';
+import {Form, Button, Alert} from 'react-bootstrap';
 import {contactsService} from "../services/contacts-service";
+import {EmailConflictAlert} from "./email-conflict-alert";
 
 export const ContactForm = (props) => {
 
@@ -10,16 +11,19 @@ export const ContactForm = (props) => {
     const [phoneNumber, setPhoneNumber] = useState("");
     const [comment, setComment] = useState("");
     const [isEdit, setIsEdit] = useState(false);
+    const [hasConflict, setHasConflict] = useState(false);
+    const [conflictError, setConflictError] = useState(null);
+    const [validationError, setValidationError] = useState("");
 
     function renderInput(title, value, changeHandler, placeholder="", required= true) {
         return <Form.Group>
-                <Form.Label>{title}</Form.Label>
-                <Form.Control value={value}
-                              required={required}
-                              placeholder={placeholder}
-                              disabled={title==='Email' && isEdit}
-                              onChange={e => changeHandler(e.target.value)}/>
-                </Form.Group>
+            <Form.Label>{title}</Form.Label>
+            <Form.Control value={value}
+                          required={required}
+                          placeholder={placeholder}
+                          disabled={title==='Email' && isEdit}
+                          onChange={e => changeHandler(e.target.value)}/>
+        </Form.Group>
     };
 
     function renderButtons() {
@@ -32,9 +36,10 @@ export const ContactForm = (props) => {
     async function handleSubmit() {
         const validation = validateInputs();
         if (validation.error) {
-            alert(validation.error);
+            setValidationError(validation.error);
             return;
         };
+        setValidationError("");
 
         const newContact = {
             first_name: firstName,
@@ -47,16 +52,22 @@ export const ContactForm = (props) => {
 
         const updatedContact = isEdit ? await contactsService.editContact(newContact) : await contactsService.addNewContact(newContact);
 
-        let updatedContactsList = [];
+        if (updatedContact.error && updatedContact.error.reason) {
+            setConflictError(updatedContact.error);
+            setHasConflict(true);
+            return
+        };
+        if (updatedContact.error) {
+            props.setError(updatedContact.error);
+            return
+        };
         if (!isEdit) {
-            updatedContactsList = [...props.contacts, updatedContact];
-        }
-        else {
-            updatedContactsList = props.contacts.map(c => {
+            props.setContacts([...props.contacts, updatedContact])
+        } else {
+            props.setContacts(props.contacts.map(c => {
                 return c.id === updatedContact.id ? updatedContact : c
-            })
+            }))
         }
-        props.setContacts(updatedContactsList)
         clearForm();
     };
 
@@ -70,6 +81,24 @@ export const ContactForm = (props) => {
         return true;
     };
 
+    async function overwriteContact(contact_id) {
+        const newContact = {
+            first_name: firstName,
+            last_name: lastName,
+            email,
+            phone_number: phoneNumber,
+            comment
+        };
+        const updatedContact = await contactsService.overwriteContact(contact_id, newContact);
+        if (updatedContact.error) {
+            props.setError(updatedContact.error);
+            return
+        }
+        props.setContacts([...props.contacts.filter(c=>c.id !== contact_id), updatedContact]);
+        setHasConflict(false);
+        clearForm();
+    };
+
     function clearForm() {
         setFirstName("");
         setLastName("");
@@ -77,6 +106,7 @@ export const ContactForm = (props) => {
         setPhoneNumber("");
         setComment("");
         props.setContactToEdit(null);
+        setValidationError("");
         setIsEdit(false);
     };
 
@@ -91,7 +121,11 @@ export const ContactForm = (props) => {
 
     return <div>
         <h3>{isEdit ? "Edit contact" : "Add new contact"}</h3>
-        <Form>
+        <div>
+            {hasConflict && <EmailConflictAlert conflictError={conflictError} setHasConflict={setHasConflict}
+                                                contacts={props.contacts} setContacts={props.setContacts}
+                                                clearForm={clearForm} overwriteContact={overwriteContact}
+                                                setError={props.setError}/>}
 
             {renderInput("First name", firstName, setFirstName, "eg.: Jakob")}
             {renderInput("Last name", lastName, setLastName, "eg.: Patinhas")}
@@ -99,7 +133,9 @@ export const ContactForm = (props) => {
             {renderInput("Phone number", phoneNumber, setPhoneNumber, "eg.: 0049 444 888 7777")}
             {renderInput("Comment", comment, setComment, "eg.: Good boy", false)}
 
+            {validationError && <Alert>{validationError}</Alert>}
+
             {renderButtons()}
-        </Form>
+        </div>
     </div>
 };
