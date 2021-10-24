@@ -1,7 +1,10 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {ContactsListMain} from './components/contacts-list-main';
+
 function App() {
   return (
     <div className="App">
-      <h1>miau</h1>
+      <ContactsListMain/>
     </div>
   );
 }

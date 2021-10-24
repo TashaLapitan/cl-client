@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RUBY_MODULE" version="4">
+  <component name="ModuleRunConfigurationManager">
+    <shared />
+  </component>
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/features" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="activemerchant (v1.117.0) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/activemerchant/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/activemerchant/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="ahoy_matey (v1.2.0) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/ahoy_matey-1.2.0/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/ahoy_matey-1.2.0/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/ahoy_matey-1.2.0/test" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/ahoy_matey-1.2.0/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/ahoy_matey-1.2.0/vendor" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/ahoy_matey-1.2.0/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/ahoy_matey-1.2.0/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/ahoy_matey-1.2.0/test" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/ahoy_matey-1.2.0/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/ahoy_matey-1.2.0/vendor" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/ahoy_matey-1.2.0/test" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/ahoy_matey-1.2.0/config" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="airbrake (v[path]) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/bin" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/test" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/rails" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/script" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/features" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/gemfiles" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/resources" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/generators" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/bin" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/test" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/rails" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/script" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/features" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/gemfiles" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/resources" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/generators" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/bin" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/test" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/rails" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/script" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/gemfiles" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/resources" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/airbrake/generators" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="angular_rails_csrf (v3.2.0) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/angular_rails_csrf/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/angular_rails_csrf/test" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/angular_rails_csrf/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/angular_rails_csrf/test" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/angular_rails_csrf/test" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="cancan (v1.6.10) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/cancan-1.6.10/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/cancan-1.6.10/spec" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/cancan-1.6.10/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/cancan-1.6.10/spec" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/cancan-1.6.10/spec" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="chartl (v0.1.18) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/chartl/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/chartl/bin" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/chartl/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/chartl/test" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/chartl/config" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/chartl/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/chartl/bin" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/chartl/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/chartl/test" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/chartl/config" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/chartl/bin" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/chartl/test" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/chartl/config" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="comfortable_mexican_sofa (v1.11.2) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/comfortable_mexican_sofa-1.11.2/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/comfortable_mexican_sofa-1.11.2/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/comfortable_mexican_sofa-1.11.2/doc" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/comfortable_mexican_sofa-1.11.2/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/comfortable_mexican_sofa-1.11.2/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/comfortable_mexican_sofa-1.11.2/script" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/comfortable_mexican_sofa-1.11.2/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/comfortable_mexican_sofa-1.11.2/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/comfortable_mexican_sofa-1.11.2/doc" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/comfortable_mexican_sofa-1.11.2/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/comfortable_mexican_sofa-1.11.2/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/comfortable_mexican_sofa-1.11.2/script" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/comfortable_mexican_sofa-1.11.2/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/comfortable_mexican_sofa-1.11.2/doc" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/comfortable_mexican_sofa-1.11.2/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/comfortable_mexican_sofa-1.11.2/script" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="descriptive_statistics (v2.5.1) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/descriptive_statistics/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/descriptive_statistics/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="devise_token_auth (v1.1.3) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/devise_token_auth-1.1.4/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/devise_token_auth-1.1.4/bin" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/devise_token_auth-1.1.4/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/devise_token_auth-1.1.4/docs" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/devise_token_auth-1.1.4/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/devise_token_auth-1.1.4/gemfiles" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/devise_token_auth-1.1.4/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/devise_token_auth-1.1.4/bin" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/devise_token_auth-1.1.4/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/devise_token_auth-1.1.4/docs" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/devise_token_auth-1.1.4/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/devise_token_auth-1.1.4/gemfiles" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/devise_token_auth-1.1.4/bin" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/devise_token_auth-1.1.4/docs" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/devise_token_auth-1.1.4/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/devise_token_auth-1.1.4/gemfiles" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="globalize-accessors (v[path]) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/globalize-accessors/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/globalize-accessors/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="intrum (v0.0.1) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/intrum/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/intrum/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/intrum/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/intrum/config" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/intrum/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/intrum/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/intrum/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/intrum/config" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/intrum/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/intrum/config" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="mautic (v1.0.6) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/mautic-rails/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/mautic-rails/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/mautic-rails/bin" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/mautic-rails/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/mautic-rails/config" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/mautic-rails/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/mautic-rails/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/mautic-rails/bin" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/mautic-rails/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/mautic-rails/config" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/mautic-rails/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/mautic-rails/bin" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/mautic-rails/config" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="scallog_client (v0.0.1) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/scallog_ruby_client/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/scallog_ruby_client/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/scallog_ruby_client/config" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/scallog_ruby_client/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/scallog_ruby_client/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/scallog_ruby_client/config" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/scallog_ruby_client/config" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="slack-ruby-bot (v[path]) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/slack-ruby-bot-0.7.0/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/slack-ruby-bot-0.7.0/examples" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/slack-ruby-bot-0.7.0/screenshots" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/slack-ruby-bot-0.7.0/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/slack-ruby-bot-0.7.0/examples" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/slack-ruby-bot-0.7.0/screenshots" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/slack-ruby-bot-0.7.0/examples" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/slack-ruby-bot-0.7.0/screenshots" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spree_api (v[path]) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/api/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/api/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/api/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/api/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/api/script" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/api/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/api/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/api/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/api/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/api/script" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/api/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/api/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/api/script" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spree_auth_devise (v2.1.1) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_auth_devise/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_auth_devise/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_auth_devise/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_auth_devise/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_auth_devise/script" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_auth_devise/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_auth_devise/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_auth_devise/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_auth_devise/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_auth_devise/script" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_auth_devise/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_auth_devise/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_auth_devise/script" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spree_autosuggest (v2.2.0) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_autosuggest/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_autosuggest/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_autosuggest/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_autosuggest/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_autosuggest/script" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_autosuggest/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_autosuggest/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_autosuggest/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_autosuggest/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_autosuggest/script" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_autosuggest/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_autosuggest/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_autosuggest/script" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spree_frontend (v[path]) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/frontend/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/frontend/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/frontend/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/frontend/script" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/frontend/vendor" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/frontend/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/frontend/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/frontend/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/frontend/script" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/frontend/vendor" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/frontend/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree/frontend/script" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spree_gateway (v2.1.1) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_gateway-2-1-stable/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_gateway-2-1-stable/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_gateway-2-1-stable/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_gateway-2-1-stable/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_gateway-2-1-stable/script" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_gateway-2-1-stable/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_gateway-2-1-stable/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_gateway-2-1-stable/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_gateway-2-1-stable/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_gateway-2-1-stable/script" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_gateway-2-1-stable/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_gateway-2-1-stable/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_gateway-2-1-stable/script" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spree_payone_client_api (v1.0.0) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_payone_client_api/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_payone_client_api/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_payone_client_api/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_payone_client_api/config" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_payone_client_api/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_payone_client_api/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_payone_client_api/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_payone_client_api/config" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_payone_client_api/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_payone_client_api/config" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spree_related_products (v3.2) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_related_products/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_related_products/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_related_products/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_related_products/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_related_products/script" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_related_products/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_related_products/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_related_products/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_related_products/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_related_products/script" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_related_products/db" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_related_products/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_related_products/script" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="spree_sunspot (v1.3) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_sunspot_search/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_sunspot_search/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_sunspot_search/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_sunspot_search/script" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_sunspot_search/app" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_sunspot_search/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_sunspot_search/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_sunspot_search/script" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_sunspot_search/config" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/spree_sunspot_search/script" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="sunspot_rails (v[path]) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/sunspot_rails/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/sunspot_rails/gemfiles" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/sunspot_rails/dev_tasks" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/sunspot_rails/generators" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/sunspot_rails/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/sunspot_rails/gemfiles" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/sunspot_rails/dev_tasks" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/sunspot_rails/generators" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/sunspot_rails/gemfiles" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/sunspot_rails/dev_tasks" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/sunspot_rails/generators" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="versioncake (v[path]) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/versioncake/bin" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/versioncake/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/versioncake/images" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/versioncake/gemfiles" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/versioncake/bin" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/versioncake/lib" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/versioncake/images" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/versioncake/gemfiles" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/versioncake/bin" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/versioncake/images" />
+          <root url="file://$MODULE_DIR$/farmy/htdocs/farmy/vendor/gems/versioncake/gemfiles" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="library" scope="PROVIDED" name="json (v2.5.1, ruby-3.0.2-p107) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="minitest (v5.14.2, ruby-3.0.2-p107) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="power_assert (v1.2.0, ruby-3.0.2-p107) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rake (v13.0.3, ruby-3.0.2-p107) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rbs (v1.0.4, ruby-3.0.2-p107) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rdoc (v6.3.1, ruby-3.0.2-p107) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rexml (v3.2.5, ruby-3.0.2-p107) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="test-unit (v3.3.7, ruby-3.0.2-p107) [gem]" level="application" />
+  </component>
+</module>
