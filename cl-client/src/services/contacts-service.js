@@ -27,5 +27,13 @@ export const contactsService = {
         } catch (err) {
             console.log(err)
         }
+    },
+    softDeleteContact: async (contactID) => {
+        try {
+            const response = await axios.put(`${contactsController}/soft_delete`, {contact_id: contactID});
+            return response.data;
+        } catch (err) {
+            console.log(err)
+        }
     }
 }

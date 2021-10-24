@@ -9,6 +9,9 @@ export const ContactInfo = (props) => {
         props.setContactToEdit(props.contact);
     };
 
+    function prepareDelete() {
+        props.setContactToDelete(props.contact);
+    };
 
     return <Card.Body>
                 <Card.Title>{last_name}, {first_name}</Card.Title>
@@ -25,7 +28,7 @@ export const ContactInfo = (props) => {
                 </Card.Text>
                 <div>
                     <Button onClick={()=>prepareEdit()}>Edit</Button>
-                    <Button>Delete</Button>
+                    <Button onClick={()=>prepareDelete()}>Delete</Button>
                 </div>
             </Card.Body>
 };
