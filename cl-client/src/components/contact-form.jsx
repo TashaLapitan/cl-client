@@ -64,15 +64,17 @@ export const ContactForm = (props) => {
             return
         }
 
+        let updatedContacts = [];
         if (!isEdit) {
-            props.setContacts([...props.contacts, updatedContact])
+            updatedContacts = [...props.contacts, updatedContact];
         }
         else {
-            props.setContacts(props.contacts.map(c => {
+            updatedContacts = props.contacts.map(c => {
                 return c.id === updatedContact.id ? updatedContact : c
-            }))
+            })
         }
-
+        props.setContacts(updatedContacts);
+        props.setDisplayedContacts(updatedContacts);
         clearForm();
     };
 

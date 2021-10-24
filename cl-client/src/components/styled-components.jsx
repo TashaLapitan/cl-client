@@ -2,20 +2,20 @@ import styled from 'styled-components';
 import {Form, Card, Modal, Row} from 'react-bootstrap';
 
 export const MainContainer = styled.div`
-    width: 900px;
+    width: 90vw;
     margin: 50px auto 0;
 `;
 
 export const ContactFormContainer = styled.div`
     position: fixed;
     width: 25%;
-    left: 15vw;
+    right: 60vw;
 `;
 
 export const ContactListContainer = styled.div`
     position: absolute;
     width: 30%;
-    right: 15vw;
+    left: 52vw;
 `;
 
 export const ContactFormStyled = styled(Form)`
@@ -63,4 +63,9 @@ export const ConflictBtnWrapper = styled.div`
 
 export const InfoRow = styled(Row)`
     margin-top: 10px;
+`;
+
+export const SearchInput = styled(Form.Control)`
+    width: 85%;
+    margin: 30px 0;
 `;

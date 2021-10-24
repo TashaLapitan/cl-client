@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import {contactsService} from "../services/contacts-service";
-import {Alert, Button, Form} from 'react-bootstrap';
+import {Alert, Button} from 'react-bootstrap';
 import {ContactInfo} from "./contact-info";
 import {ContactForm} from "./contact-form";
 import {ConfirmDeleteModal} from "./confirm-delete-modal";
-import {ContactListContainer, MainContainer} from './styled-components'
+import {ContactListContainer, MainContainer, SearchInput} from './styled-components'
 
 export const ContactsListMain = () => {
 
     const [contacts, setContacts] = useState([]);
+    const [displayedContacts, setDisplayedContacts] = useState([]);
     const [contactToEdit, setContactToEdit] = useState(null);
     const [contactToDelete, setContactToDelete] = useState(null);
     const [error, setError] = useState("");
@@ -17,10 +18,27 @@ export const ContactsListMain = () => {
     async function getAllActiveContacts() {
         const allActiveContacts = await contactsService.getAllActiveContacts();
         setContacts(allActiveContacts);
+        setDisplayedContacts(allActiveContacts);
     };
 
-    function handleSearch() {
+    function handleSearch(value) {
+        setSearchValue(value);
+        value = value.toLowerCase();
 
+        if (value === "") {
+            setDisplayedContacts(contacts);
+            return
+        }
+        const matchingContacts = contacts.filter(c => {
+            if (c.first_name.toLowerCase().includes(value)) return true;
+            if (c.last_name.toLowerCase().includes(value)) return true;
+            if (c.email.toLowerCase().includes(value)) return true;
+            if (c.phone_number.toLowerCase().includes(value)) return true;
+            if (c.comment && c.comment.toLowerCase().includes(value)) return true;
+            return false;
+        });
+
+        setDisplayedContacts(matchingContacts);
     };
 
     useEffect(()=> {
@@ -38,22 +56,26 @@ export const ContactsListMain = () => {
                                                 setContactToDelete={setContactToDelete}
                                                 contacts={contacts}
                                                 setContacts={setContacts}
+                                                setDisplayedContacts={setDisplayedContacts}
                                                 setError={setError}/>}
 
         <ContactForm setContacts={setContacts}
+                     setDisplayedContacts={setDisplayedContacts}
                      contacts={contacts}
                      contactToEdit={contactToEdit}
                      setContactToEdit={setContactToEdit}
                      setError={setError}/>
 
         <ContactListContainer>
-            <h3 style={{marginBottom: '38px'}}>Your contacts</h3>
+            <h3>Your contacts</h3>
 
-            {contacts.length > 0 && contacts.map(contact => <ContactInfo key={contact.id} contact={contact}
-                                                  setContactToEdit={setContactToEdit}
-                                                  setContactToDelete={setContactToDelete}/>)}
+            <SearchInput value={searchValue} onChange={e=>handleSearch(e.target.value)} placeholder="Search.."/>
 
-            {contacts.length === 0 && <div>Your contact list is empty..</div>}
+            {displayedContacts.length > 0 && displayedContacts.map(contact => <ContactInfo key={contact.id} contact={contact}
+                                                                                           setContactToEdit={setContactToEdit}
+                                                                                           setContactToDelete={setContactToDelete}/>)}
+
+            {displayedContacts.length === 0 && <div>No contacts..</div>}
 
         </ContactListContainer>
 

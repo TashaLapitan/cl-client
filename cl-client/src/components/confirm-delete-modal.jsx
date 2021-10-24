@@ -10,6 +10,7 @@ export const ConfirmDeleteModal = (props) => {
         if (isDeleted.success) {
             props.setContactToDelete(null);
             props.setContacts(props.contacts.filter(c=> c.id !== props.contactToDelete.id));
+            props.setDisplayedContacts(props.contacts.filter(c=> c.id !== props.contactToDelete.id));
             return
         }
         if (isDeleted.error) props.setError(isDeleted.error)
