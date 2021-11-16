@@ -1,7 +1,7 @@
 import React from 'react';
 import {Alert, Button} from "react-bootstrap";
-import {contactsService} from "../services/contacts-service";
-import {ConflictBtnWrapper} from "./styled-components";
+import {contactsService} from "../../services/contacts-service";
+import {ConflictBtnWrapper} from "../styled-components";
 
 export const EmailConflictAlert = (props) => {
     const {reason, message, contact_id} = props.conflictError;

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Card, Row, Col, Button} from 'react-bootstrap';
-import {ContactCard, ContactCardBtnWrapper, EditDeleteBtnWrapper, InfoRow} from "./styled-components";
+import {ContactCard, ContactCardBtnWrapper, EditDeleteBtnWrapper, InfoRow} from "../styled-components";
 
 export const ContactInfo = (props) => {
 

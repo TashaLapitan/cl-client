@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, Modal} from 'react-bootstrap'
-import {contactsService} from "../services/contacts-service";
-import {DeleteConfirmationModal} from "./styled-components";
+import {contactsService} from "../../services/contacts-service";
+import {DeleteConfirmationModal} from "../styled-components";
 
 export const ConfirmDeleteModal = (props) => {
 

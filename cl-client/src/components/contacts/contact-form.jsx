@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {Form, Button, Alert} from 'react-bootstrap';
-import {contactsService} from "../services/contacts-service";
+import {contactsService} from "../../services/contacts-service";
 import {EmailConflictAlert} from "./email-conflict-alert";
-import {ContactFormContainer, ContactFormStyled, FormBtnWrapper} from "./styled-components";
+import {ContactFormContainer, ContactFormStyled, FormBtnWrapper} from "../styled-components";
 
 export const ContactForm = (props) => {
 

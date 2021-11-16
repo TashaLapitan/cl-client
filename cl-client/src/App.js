@@ -1,11 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {ContactsListMain} from './components/contacts-list-main';
+import {Provider} from "react-redux";
+import store from "./redux/store";
+import {ContactsListMain} from './components/contacts/contacts-list-main';
 
 function App() {
   return (
-    <div className="App">
-      <ContactsListMain/>
-    </div>
+      <Provider store={store}>
+          <ContactsListMain/>
+      </Provider>
   );
 }
 
