@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
+import {useDispatch} from "react-redux";
+import Actions from './../../redux/actions/contacts-actions';
 import {Form, Button, Alert} from 'react-bootstrap';
-import {contactsService} from "../../services/contacts-service";
-import {EmailConflictAlert} from "./email-conflict-alert";
 import {ContactFormContainer, ContactFormStyled, FormBtnWrapper} from "../styled-components";
 
 export const ContactForm = (props) => {
+
+    const dispatch = useDispatch();
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -12,8 +14,6 @@ export const ContactForm = (props) => {
     const [phoneNumber, setPhoneNumber] = useState("");
     const [comment, setComment] = useState("");
     const [isEdit, setIsEdit] = useState(false);
-    const [hasConflict, setHasConflict] = useState(false);
-    const [conflictError, setConflictError] = useState(null);
     const [validationError, setValidationError] = useState("");
 
     function renderInput(title, value, changeHandler, placeholder="", required= true) {
@@ -49,32 +49,17 @@ export const ContactForm = (props) => {
             phone_number: phoneNumber,
             comment
         };
-        if (props.contactToEdit) newContact.contact_id = props.contactToEdit.id;
-
-        const updatedContact = isEdit ? await contactsService.editContact(newContact) : await contactsService.addNewContact(newContact);
-
-        if (updatedContact.error && updatedContact.error.reason) {
-            setConflictError(updatedContact.error);
-            setHasConflict(true);
-            return
+        if (isEdit)  {
+            newContact.contact_id = props.contactToEdit.id;
+            dispatch(Actions.editContact(newContact));
+        } else {
+            dispatch(Actions.addNewContact(newContact))
         };
 
-        if (updatedContact.error) {
-            props.setError(updatedContact.error);
-            return
-        }
-
-        let updatedContacts = [];
-        if (!isEdit) {
-            updatedContacts = [...props.contacts, updatedContact];
-        }
-        else {
-            updatedContacts = props.contacts.map(c => {
-                return c.id === updatedContact.id ? updatedContact : c
-            })
-        }
-        props.setContacts(updatedContacts);
-        props.setDisplayedContacts(updatedContacts);
+        // if (updatedContact.error) {
+        //     props.setError(updatedContact.error);
+        //     return
+        // }
         clearForm();
     };
 
@@ -86,24 +71,6 @@ export const ContactForm = (props) => {
         if (!validEmail.test(String(email).toLowerCase())) return {error: "Please provide a valid email"};
         if (!phoneNumber) return {error: "Please provide the phone number"};
         return true;
-    };
-
-    async function overwriteContact(contact_id) {
-        const newContact = {
-            first_name: firstName,
-            last_name: lastName,
-            email,
-            phone_number: phoneNumber,
-            comment
-        };
-        const updatedContact = await contactsService.overwriteContact(contact_id, newContact);
-        if (updatedContact.error) {
-            props.setError(updatedContact.error);
-            return
-        }
-        props.setContacts([...props.contacts.filter(c=>c.id !== contact_id), updatedContact]);
-        setHasConflict(false);
-        clearForm();
     };
 
     function clearForm() {
@@ -123,16 +90,12 @@ export const ContactForm = (props) => {
         setEmail(props.contactToEdit ? props.contactToEdit.email : "");
         setPhoneNumber(props.contactToEdit ? props.contactToEdit.phone_number : "");
         setComment(props.contactToEdit ? props.contactToEdit.comment : "");
-        setIsEdit(props.contactToEdit ? true : false);
+        setIsEdit(!!props.contactToEdit);
     }, [props.contactToEdit])
 
     return <ContactFormContainer>
         <h3>{isEdit ? "Edit contact" : "Add new contact"}</h3>
         <ContactFormStyled>
-            {hasConflict && <EmailConflictAlert conflictError={conflictError} setHasConflict={setHasConflict}
-                                                contacts={props.contacts} setContacts={props.setContacts}
-                                                clearForm={clearForm} overwriteContact={overwriteContact}
-                                                setError={props.setError}/>}
 
             {renderInput("First name", firstName, setFirstName, "eg.: Jakob")}
             {renderInput("Last name", lastName, setLastName, "eg.: Patinhas")}

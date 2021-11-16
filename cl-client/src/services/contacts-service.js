@@ -44,9 +44,9 @@ export const contactsService = {
             console.log(err)
         }
     },
-    overwriteContact: async (contactID, newContact) => {
+    overwriteContact: async (newContact) => {
         try {
-            const response = await axios.put(`${contactsController}/overwrite`, {contact_id: contactID, ...newContact});
+            const response = await axios.put(`${contactsController}/overwrite`, newContact);
             return response.data;
         } catch (err) {
             console.log(err)

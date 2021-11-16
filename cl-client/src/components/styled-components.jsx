@@ -48,7 +48,7 @@ export const EditDeleteBtnWrapper = styled.div`
     justify-content: space-between;
 `;
 
-export const DeleteConfirmationModal = styled(Modal.Dialog)`
+export const ConfirmationModalWrapper = styled(Modal.Dialog)`
     z-index: 1000;
     position: fixed;
     width: 40vw;

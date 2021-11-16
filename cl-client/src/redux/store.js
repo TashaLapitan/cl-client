@@ -4,9 +4,13 @@ import thunkMiddleware from 'redux-thunk';
 import * as ReduxDevtoolsExtension from 'redux-devtools-extension';
 import * as ReduxLogger from 'redux-logger';
 import contactsReducer from './reducers/contacts-reducer';
+import confirmationReducer from './reducers/confirmation-reducer';
+import alertReducer from './reducers/alert-reducer';
 
 const rootReducer = combineReducers({
-    contacts: contactsReducer
+    contacts: contactsReducer,
+    confirmation: confirmationReducer,
+    alert: alertReducer
 });
 
 const loggerMiddleware = ReduxLogger.createLogger({

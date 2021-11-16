@@ -3,5 +3,11 @@ export default {
         allActiveContacts: [],
         displayedContacts: [],
         searchValue: ""
+    },
+    confirmation: {
+        confirmationDetails: null
+    },
+    alert: {
+        alertDetails: null
     }
 };

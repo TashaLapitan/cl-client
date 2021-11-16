@@ -26,10 +26,30 @@ const contactsSlice = createSlice({
                         (contact.comment && contact.comment.toLowerCase().includes(searchValue))
                 });
             }
+        },
+        addNewContact(state, action) {
+            const newContact = action.payload;
+            const updatedContacts = _.sortBy([...state.allActiveContacts, newContact], contact => contact.last_name)
+            state.allActiveContacts = updatedContacts;
+            state.displayedContacts = updatedContacts;
+        },
+        editContact(state, action) {
+            const updatedContact = action.payload;
+            const updatedContacts = _.map(state.allActiveContacts, contact => {
+                return contact.id == updatedContact.id ? updatedContact : contact
+            });
+            state.allActiveContacts = updatedContacts;
+            state.displayedContacts = updatedContacts;
+        },
+        removeContact(state, action) {
+            const contactId = action.payload;
+            const updatedContacts = _.reject(state.allActiveContacts, contact => contact.id == contactId);
+            state.allActiveContacts = updatedContacts;
+            state.displayedContacts = updatedContacts;
         }
     }
 });
 
-export const {getAllContacts, filterContacts} = contactsSlice.actions;
+export const {getAllContacts, filterContacts, addNewContact, editContact, removeContact} = contactsSlice.actions;
 
 export default contactsSlice.reducer;

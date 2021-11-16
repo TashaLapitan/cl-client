@@ -1,8 +1,13 @@
 import React, {useState} from 'react';
+import {useDispatch} from "react-redux";
+import ConfirmationActions from './../../redux/actions/confirmation-actions';
+import ContactActions from './../../redux/actions/contacts-actions';
 import {Card, Row, Col, Button} from 'react-bootstrap';
 import {ContactCard, ContactCardBtnWrapper, EditDeleteBtnWrapper, InfoRow} from "../styled-components";
 
 export const ContactInfo = (props) => {
+
+    const dispatch = useDispatch();
 
     const {first_name, last_name, email, phone_number, comment, change_log} = props.contact;
     const [showInfo, setShowInfo] = useState(true);
@@ -12,7 +17,12 @@ export const ContactInfo = (props) => {
     };
 
     function prepareDelete() {
-        props.setContactToDelete(props.contact);
+        const confirmationDetails = {
+            question: `Are you sure you want to delete ${email} from your contacts?`,
+            confirmedAction: ContactActions.softDeleteContact,
+            actionParameter: props.contact.id
+        };
+        dispatch(ConfirmationActions.requestConfirmation(confirmationDetails));
     };
 
     function renderContactInfo() {
