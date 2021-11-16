@@ -8,7 +8,8 @@ const AppSelectors = {
         confirmationDetails: state => state.confirmation.confirmationDetails
     },
     alert: {
-        alertDetails: state => state.alert.alertDetails
+        alertDetails: state => state.alert.alertDetails,
+        alertInfo: state => state.alert.alertInfo
     }
 };
 

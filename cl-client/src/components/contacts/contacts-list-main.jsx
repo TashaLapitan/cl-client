@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {useSelector, useDispatch} from "react-redux";
 import Actions from './../../redux/actions/contacts-actions';
-import {Alert, Button} from 'react-bootstrap';
 import {ContactInfo} from "./contact-info";
 import {ContactForm} from "./contact-form";
-// import {ConfirmDeleteModal} from "./confirm-delete-modal";
 import {ContactListContainer, MainContainer, SearchInput} from '../styled-components'
 
 export const ContactsListMain = () => {
@@ -12,8 +10,6 @@ export const ContactsListMain = () => {
     const dispatch = useDispatch();
 
     const [contactToEdit, setContactToEdit] = useState(null);
-    const [contactToDelete, setContactToDelete] = useState(null);
-    const [error, setError] = useState("");
 
     const displayedContacts = useSelector(state => state.contacts.displayedContacts);
     const searchValue = useSelector(state => state.contacts.searchValue);
@@ -28,14 +24,8 @@ export const ContactsListMain = () => {
 
     return <MainContainer>
 
-        {error && <Alert>
-            <p>{error}</p>
-            <Button onClick={()=>setError("")}>Ok!</Button>
-        </Alert>}
-
         <ContactForm contactToEdit={contactToEdit}
-                     setContactToEdit={setContactToEdit}
-                     setError={setError}/>
+                     setContactToEdit={setContactToEdit}/>
 
         <ContactListContainer>
             <h3>Your contacts</h3>
@@ -43,8 +33,7 @@ export const ContactsListMain = () => {
             <SearchInput value={searchValue} onChange={e=>handleSearch(e.target.value)} placeholder="Search.."/>
 
             {displayedContacts.length > 0 && displayedContacts.map(contact => <ContactInfo key={contact.id} contact={contact}
-                                                                                           setContactToEdit={setContactToEdit}
-                                                                                           setContactToDelete={setContactToDelete}/>)}
+                                                                                           setContactToEdit={setContactToEdit}/>)}
 
             {displayedContacts.length === 0 && <div>No contacts..</div>}
 

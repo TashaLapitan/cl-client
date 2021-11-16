@@ -6,8 +6,6 @@ import {ConflictBtnWrapper} from "../styled-components";
 
 export const ConflictAlert = () => {
 
-    console.log('CONFLICT ALERT')
-
     const alertDetails = useSelector(state => state.alert.alertDetails);
     const dispatch = useDispatch();
 

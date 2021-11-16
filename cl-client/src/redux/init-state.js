@@ -8,6 +8,7 @@ export default {
         confirmationDetails: null
     },
     alert: {
-        alertDetails: null
+        alertDetails: null,
+        alertInfo: null
     }
 };

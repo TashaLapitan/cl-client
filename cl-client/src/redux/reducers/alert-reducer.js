@@ -5,16 +5,21 @@ const alertSlice = createSlice({
     name: "alert",
     initialState: initState.alert,
     reducers: {
-        showAlert(state, actions) {
-            console.log('ALERT DETAILS IN REDUCER: ', actions.payload)
+        showConflictAlert(state, actions) {
+            window.scroll(0,0);
             state.alertDetails = actions.payload;
+        },
+        showInfoAlert(state, actions) {
+            window.scroll(0,0);
+            state.alertInfo = actions.payload;
         },
         clearAlert(state) {
             state.alertDetails = null;
+            state.alertInfo = null;
         }
     }
 });
 
-export const {showAlert, clearAlert} = alertSlice.actions;
+export const {showConflictAlert, clearAlert, showInfoAlert} = alertSlice.actions;
 
 export default alertSlice.reducer;

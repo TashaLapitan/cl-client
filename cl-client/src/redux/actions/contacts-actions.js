@@ -8,7 +8,7 @@ const getAllContacts = () => async dispatch => {
         dispatch(ContactsReducer.getAllContacts(allContacts));
     }
     catch(err) {
-        console.warn('Error: ' + err.toString());
+        dispatch(AlertReducer.showInfoAlert({error: err.toString()}));
     }
 };
 
@@ -27,31 +27,38 @@ const addNewContact = contact => async dispatch => {
                 actionTwo: overwriteContact,
                 actionTwoParameter: {contact_id: newContact.error.contact_id, ...contact}
             };
-            dispatch(AlertReducer.showAlert(conflictDetails));
+            dispatch(AlertReducer.showConflictAlert(conflictDetails));
         } else if (newContact.error && newContact.error.reason == 'active') {
-            // handleErrorMessage
-        } else dispatch(ContactsReducer.addNewContact(newContact));
+            dispatch(AlertReducer.showInfoAlert({error: newContact.error.message}));
+        } else {
+            dispatch(ContactsReducer.addNewContact(newContact));
+            dispatch(AlertReducer.showInfoAlert({success: `${newContact.email} successfully added`}));
+        }
     } catch(err) {
-        console.warn('Error: ' + err.toString());
+        dispatch(AlertReducer.showInfoAlert({error: err.toString()}));
     }
 };
 
 const editContact = contact => async dispatch => {
     try {
-        const newContact = await contactsService.editContact(contact);
-        dispatch(ContactsReducer.editContact(newContact));
+        const updatedContact = await contactsService.editContact(contact);
+        dispatch(ContactsReducer.editContact(updatedContact));
+        dispatch(AlertReducer.showInfoAlert({success: `${updatedContact.email} successfully updated`}));
     } catch(err) {
-        console.warn('Error: ' + err.toString());
+        dispatch(AlertReducer.showInfoAlert({error: err.toString()}));
     }
 };
 
 const softDeleteContact = contactId => async dispatch => {
     try {
         const isDeleted = await contactsService.softDeleteContact(contactId);
-        if (isDeleted.success) dispatch(ContactsReducer.removeContact(contactId))
-        // TODO handle errors
+        if (isDeleted.success) {
+            dispatch(ContactsReducer.removeContact(contactId));
+            dispatch(AlertReducer.showInfoAlert({success: `Contact successfully deleted`}));
+        }
+        else if (isDeleted.error) dispatch(AlertReducer.showInfoAlert({error: isDeleted.error}));
     } catch(err) {
-        console.warn('Error: ' + err.toString());
+        dispatch(AlertReducer.showInfoAlert({error: err.toString()}));
     }
 };
 
@@ -59,17 +66,19 @@ const restoreContact = contactId => async dispatch => {
     try {
         const restoredContact = await contactsService.restoreContact(contactId);
         dispatch(ContactsReducer.addNewContact(restoredContact));
+        dispatch(AlertReducer.showInfoAlert({success: `${restoredContact.email} successfully restored`}));
     } catch(err) {
-        console.warn('Error: ' + err.toString());
+        dispatch(AlertReducer.showInfoAlert({error: err.toString()}));
     }
 };
 
-const overwriteContact = (params) => async dispatch => {
+const overwriteContact = contact => async dispatch => {
     try {
-        const newContact = await contactsService.overwriteContact(params);
+        const newContact = await contactsService.overwriteContact(contact);
         dispatch(ContactsReducer.addNewContact(newContact));
+        dispatch(AlertReducer.showInfoAlert({success: `${newContact.email} successfully added`}));
     } catch(err) {
-        console.warn('Error: ' + err.toString());
+        dispatch(AlertReducer.showInfoAlert({error: err.toString()}));
     }
 };
 
