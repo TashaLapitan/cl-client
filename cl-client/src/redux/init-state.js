@@ -2,7 +2,8 @@ export default {
     contacts: {
         allActiveContacts: [],
         displayedContacts: [],
-        searchValue: ""
+        searchValue: "",
+        contactToEdit: null
     },
     confirmation: {
         confirmationDetails: null

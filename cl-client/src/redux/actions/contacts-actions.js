@@ -39,6 +39,10 @@ const addNewContact = contact => async dispatch => {
     }
 };
 
+const updateContactToEdit = contact => dispatch => {
+    dispatch(ContactsReducer.updateContactToEdit(contact));
+};
+
 const editContact = contact => async dispatch => {
     try {
         const updatedContact = await contactsService.editContact(contact);
@@ -86,6 +90,7 @@ export default {
     getAllContacts,
     filterContacts,
     addNewContact,
+    updateContactToEdit,
     editContact,
     softDeleteContact,
     restoreContact,

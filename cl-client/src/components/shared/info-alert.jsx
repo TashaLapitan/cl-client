@@ -1,7 +1,8 @@
 import React from 'react';
 import {useSelector, useDispatch} from "react-redux";
 import AlertActions from './../../redux/actions/alert-actions';
-import {Alert, Button} from "react-bootstrap";
+import {Button} from "react-bootstrap";
+import {AlertContainer} from "../styled-components";
 
 export const InfoAlert = () => {
 
@@ -13,9 +14,11 @@ export const InfoAlert = () => {
     };
 
     return alertInfo
-            ? <Alert variant={alertInfo.error ? 'danger' : 'success'}>
-                <p>{alertInfo.error || alertInfo.success}</p>
-                <Button onClick={()=>clearAlert()}>Ok!</Button>
-            </Alert>
+            ? <AlertContainer variant={alertInfo.error ? 'danger' : 'success'}
+                              style={{textAlign: 'center'}}>
+                <div className="info-alert-text">{alertInfo.error || alertInfo.success}</div>
+                <Button variant={alertInfo.error ? 'danger' : 'success'}
+                        onClick={()=>clearAlert()}>Ok!</Button>
+            </AlertContainer>
             : null
 };

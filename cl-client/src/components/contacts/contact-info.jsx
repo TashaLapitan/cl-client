@@ -13,7 +13,7 @@ export const ContactInfo = (props) => {
     const [showInfo, setShowInfo] = useState(true);
 
     function prepareEdit() {
-        props.setContactToEdit(props.contact);
+        dispatch(ContactActions.updateContactToEdit(props.contact));
     };
 
     function prepareDelete() {
@@ -56,14 +56,14 @@ export const ContactInfo = (props) => {
     function renderContactHistory() {
         return <Card.Body>
             <Card.Title>Contact history log</Card.Title>
-            <Card.Text>
+            <div className="card-text" style={{padding: 10}}>
                 {change_log.map((r, i) => {
-                    return  <Row key={i}>
+                    return  <Row key={i} style={{marginBottom: 10}}>
                         <Col md={4}>{prettifyDate(r.created_at)}</Col>
                         <Col md={8}>{r.details}</Col>
                     </Row>
                 })}
-            </Card.Text>
+            </div>
             <ContactCardBtnWrapper>
                 <Button variant="outline-secondary" onClick={()=> setShowInfo(true)}>Close history</Button>
             </ContactCardBtnWrapper>

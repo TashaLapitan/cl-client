@@ -2,7 +2,7 @@ import React from 'react';
 import {useSelector, useDispatch} from "react-redux";
 import AlertActions from './../../redux/actions/alert-actions';
 import {Alert, Button} from "react-bootstrap";
-import {ConflictBtnWrapper} from "../styled-components";
+import {AlertContainer, ConflictBtnWrapper} from "../styled-components";
 
 export const ConflictAlert = () => {
 
@@ -10,16 +10,12 @@ export const ConflictAlert = () => {
     const dispatch = useDispatch();
 
     function actionOne() {
-        if (alertDetails.actionOneParameter) {
-            dispatch(alertDetails.actionOne(alertDetails.actionOneParameter));
-        } else dispatch(alertDetails.actionOne());
+        dispatch(alertDetails.actionOne(alertDetails.actionOneParameter));
         unmountAlert();
     };
 
     function actionTwo() {
-        if (alertDetails.actionTwoParameter) {
-            dispatch(alertDetails.actionTwo(alertDetails.actionTwoParameter));
-        } else dispatch(alertDetails.actionTwo());
+        dispatch(alertDetails.actionTwo(alertDetails.actionTwoParameter));
         unmountAlert();
     };
 
@@ -37,10 +33,10 @@ export const ConflictAlert = () => {
     };
 
     return alertDetails
-            ? <Alert variant='warning'>
+            ? <AlertContainer variant='warning' style={{textAlign: 'center', paddingLeft: '20vw', paddingRight: '20vw'}}>
                 <Alert.Heading>Conflict</Alert.Heading>
                 <p>{alertDetails.message}</p>
                 {renderButtons()}
-            </Alert>
+            </AlertContainer>
             : null
 };

@@ -9,7 +9,7 @@ export const contactsService = {
             const response = await axios.get(`${contactsController}/all_active`);
             return response.data;
         } catch (err) {
-            console.log(err)
+            console.warn('Error: ', err.toString());
         }
     },
     addNewContact: async (newContact) => {
@@ -17,7 +17,7 @@ export const contactsService = {
             const response = await axios.post(`${contactsController}/new_contact`, newContact);
             return response.data;
         } catch(err) {
-            console.log(err)
+            console.warn('Error: ', err.toString());
         }
     },
     editContact: async (newContact) => {
@@ -25,7 +25,7 @@ export const contactsService = {
             const response = await axios.put(`${contactsController}/update_contact`, newContact);
             return response.data;
         } catch (err) {
-            console.log(err)
+            console.warn('Error: ', err.toString());
         }
     },
     softDeleteContact: async (contactID) => {
@@ -33,7 +33,7 @@ export const contactsService = {
             const response = await axios.put(`${contactsController}/soft_delete`, {contact_id: contactID});
             return response.data;
         } catch (err) {
-            console.log(err)
+            console.warn('Error: ', err.toString());
         }
     },
     restoreContact: async (contactID) => {
@@ -41,7 +41,7 @@ export const contactsService = {
             const response = await axios.put(`${contactsController}/restore`, {contact_id: contactID});
             return response.data;
         } catch (err) {
-            console.log(err)
+            console.warn('Error: ', err.toString());
         }
     },
     overwriteContact: async (newContact) => {
@@ -49,7 +49,7 @@ export const contactsService = {
             const response = await axios.put(`${contactsController}/overwrite`, newContact);
             return response.data;
         } catch (err) {
-            console.log(err)
+            console.warn('Error: ', err.toString());
         }
     }
-}
+};

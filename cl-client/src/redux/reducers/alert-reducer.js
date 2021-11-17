@@ -6,11 +6,9 @@ const alertSlice = createSlice({
     initialState: initState.alert,
     reducers: {
         showConflictAlert(state, actions) {
-            window.scroll(0,0);
             state.alertDetails = actions.payload;
         },
         showInfoAlert(state, actions) {
-            window.scroll(0,0);
             state.alertInfo = actions.payload;
         },
         clearAlert(state) {

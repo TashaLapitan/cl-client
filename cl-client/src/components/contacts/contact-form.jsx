@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import Actions from './../../redux/actions/contacts-actions';
 import {Form, Button, Alert} from 'react-bootstrap';
 import {ContactFormContainer, ContactFormStyled, FormBtnWrapper} from "../styled-components";
@@ -7,6 +7,7 @@ import {ContactFormContainer, ContactFormStyled, FormBtnWrapper} from "../styled
 export const ContactForm = (props) => {
 
     const dispatch = useDispatch();
+    const contactToEdit = useSelector(state => state.contacts.contactToEdit);
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -50,16 +51,11 @@ export const ContactForm = (props) => {
             comment
         };
         if (isEdit)  {
-            newContact.contact_id = props.contactToEdit.id;
+            newContact.contact_id = contactToEdit.id;
             dispatch(Actions.editContact(newContact));
         } else {
             dispatch(Actions.addNewContact(newContact))
         };
-
-        // if (updatedContact.error) {
-        //     props.setError(updatedContact.error);
-        //     return
-        // }
         clearForm();
     };
 
@@ -74,24 +70,19 @@ export const ContactForm = (props) => {
     };
 
     function clearForm() {
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setPhoneNumber("");
-        setComment("");
-        props.setContactToEdit(null);
+        dispatch(Actions.updateContactToEdit(null));
         setValidationError("");
         setIsEdit(false);
     };
 
     useEffect(() => {
-        setFirstName(props.contactToEdit ? props.contactToEdit.first_name : "");
-        setLastName(props.contactToEdit ? props.contactToEdit.last_name : "");
-        setEmail(props.contactToEdit ? props.contactToEdit.email : "");
-        setPhoneNumber(props.contactToEdit ? props.contactToEdit.phone_number : "");
-        setComment(props.contactToEdit ? props.contactToEdit.comment : "");
-        setIsEdit(!!props.contactToEdit);
-    }, [props.contactToEdit])
+        setFirstName(contactToEdit ? contactToEdit.first_name : "");
+        setLastName(contactToEdit ? contactToEdit.last_name : "");
+        setEmail(contactToEdit ? contactToEdit.email : "");
+        setPhoneNumber(contactToEdit ? contactToEdit.phone_number : "");
+        setComment(contactToEdit ? contactToEdit.comment : "");
+        setIsEdit(!!contactToEdit);
+    }, [contactToEdit])
 
     return <ContactFormContainer>
         <h3>{isEdit ? "Edit contact" : "Add new contact"}</h3>

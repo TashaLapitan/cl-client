@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Form, Card, Modal, Row} from 'react-bootstrap';
+import {Form, Card, Modal, Row, Alert} from 'react-bootstrap';
 
 export const MainContainer = styled.div`
     width: 90vw;
@@ -8,14 +8,14 @@ export const MainContainer = styled.div`
 
 export const ContactFormContainer = styled.div`
     position: fixed;
-    width: 25%;
+    width: 350px;
     right: 60vw;
 `;
 
 export const ContactListContainer = styled.div`
     position: absolute;
-    width: 30%;
-    left: 52vw;
+    width: 350px;
+    left: 50vw;
 `;
 
 export const ContactFormStyled = styled(Form)`
@@ -33,7 +33,7 @@ export const FormBtnWrapper = styled.div`
 `;
 
 export const ContactCard = styled(Card)`
-    width: 85%;
+    width: 345px;
     margin-bottom: 15px;
 `;
 
@@ -48,17 +48,19 @@ export const EditDeleteBtnWrapper = styled.div`
     justify-content: space-between;
 `;
 
-export const ConfirmationModalWrapper = styled(Modal.Dialog)`
+export const ConfirmationModalContainer = styled(Modal.Dialog)`
     z-index: 1000;
     position: fixed;
-    width: 40vw;
     left: 30vw;
     top: 10vh;
 `;
 
 export const ConflictBtnWrapper = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
+    button {
+        margin-left: 20px;
+    }
 `;
 
 export const InfoRow = styled(Row)`
@@ -66,6 +68,17 @@ export const InfoRow = styled(Row)`
 `;
 
 export const SearchInput = styled(Form.Control)`
-    width: 85%;
+    width: 345px;
     margin: 30px 0;
+`;
+
+export const AlertContainer = styled(Alert)`
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2000;
+    .info-alert-text {
+        display: inline-block;
+        margin-right: 15px;
+    }
 `;

@@ -2,7 +2,7 @@ import React from 'react';
 import {useSelector, useDispatch} from "react-redux";
 import Actions from './../../redux/actions/confirmation-actions';
 import {Button, Modal} from 'react-bootstrap';
-import {ConfirmationModalWrapper} from "../styled-components";
+import {ConfirmationModalContainer} from "../styled-components";
 
 export const ConfirmationModal = () => {
 
@@ -10,9 +10,7 @@ export const ConfirmationModal = () => {
     const confirmationDetails = useSelector(state => state.confirmation.confirmationDetails);
 
     function confirmAction() {
-        if (confirmationDetails.actionParameter) {
-            dispatch(confirmationDetails.confirmedAction(confirmationDetails.actionParameter));
-        } else dispatch(confirmationDetails.confirmedAction());
+        dispatch(confirmationDetails.confirmedAction(confirmationDetails.actionParameter));
         unmountModal();
     };
 
@@ -21,13 +19,13 @@ export const ConfirmationModal = () => {
     };
 
     return confirmationDetails
-            ? <ConfirmationModalWrapper>
+            ? <ConfirmationModalContainer>
                 <Modal.Header><Modal.Title>Confirm action</Modal.Title></Modal.Header>
                 <Modal.Body>{confirmationDetails.question}</Modal.Body>
                 <Modal.Footer>
                     <Button variant="outline-secondary" onClick={()=>unmountModal()}>Cancel</Button>
                     <Button variant="danger" onClick={()=>confirmAction()}>Confirm</Button>
                 </Modal.Footer>
-            </ConfirmationModalWrapper>
+              </ConfirmationModalContainer>
             : null
 };

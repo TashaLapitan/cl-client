@@ -33,6 +33,9 @@ const contactsSlice = createSlice({
             state.allActiveContacts = updatedContacts;
             state.displayedContacts = updatedContacts;
         },
+        updateContactToEdit(state, action) {
+            state.contactToEdit = action.payload;
+        },
         editContact(state, action) {
             const updatedContact = action.payload;
             const updatedContacts = _.map(state.allActiveContacts, contact => {
@@ -50,6 +53,11 @@ const contactsSlice = createSlice({
     }
 });
 
-export const {getAllContacts, filterContacts, addNewContact, editContact, removeContact} = contactsSlice.actions;
+export const {getAllContacts,
+              filterContacts,
+              addNewContact,
+              editContact,
+              removeContact,
+              updateContactToEdit} = contactsSlice.actions;
 
 export default contactsSlice.reducer;
